@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        function check(){
+            var dateLength = document.getElementById("date").value.length;
+            if(dateLength < 10){
+                alert("2023-10-09 형식으로 입력해주세요")
+                document.getElementById("date").focus();
+                return false;
+            }
+            var location = document.form1.place.value;
+            if(location ==""){
+                alert("장소를 입력해주세요!")
+                document.getElementById("place").focus();
+                return false;
+            }
+            var content = document.form1.contents.value;
+            if(content ==""){
+                alert("내용을 입력해주세요!")
+                document.getElementById("contents").focus();
+                return false;
+            }
+            var price = document.form1.price.value;
+            if(price ==""){
+                alert("비용을 입력해주세요!")
+                document.getElementById("price").focus();
+                return false;
+            }
+            if(!confirm("추가 또는 취소를 선택해주세요.")){
+                alert("취소를 누르셨습니다.");
+            }else{
+                alert("추가 성공!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>가계부 내용 작성!</h1>
+    <form name = "form1" onsubmit="return check()" method = "post">
+    <label for ="date">날자</label>
+    <input type = "text" name = "date" id="date"><br> 
+    <label for ="place">장소</label>
+    <input type = "text" name = "place" id ="place"><br>
+    <label for ="contents">내용</label>
+    <input type = "text" name = "contents" id ="contents"><br>
+    <label for ="price">비용</label>
+    <input type = "text" name = "price" id ="price"><br>
+    <input type ="submit" value = "추가">
+</form>
+</body>
+</html>
