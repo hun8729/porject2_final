@@ -29,12 +29,19 @@
         -moz-user-select: none;
         user-select: none;
       }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+      @media (max-width: 767.98px) {
+        main {
+          margin-left: 0; 
         }
       }
+      
+      @media (min-width: 768px) {
+        
+        main {
+          margin-left: 240px; 
+        }
+      }
+    
     </style>
 
     
@@ -47,7 +54,8 @@
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Financial ledger</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
+    <img src="calculator.jpg" alt="Calculator Icon" class="icon"width="30" height="30"style="margin-right: 10px;">Financial ledger</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -89,87 +97,34 @@
         document.getElementById("Dashboard").addEventListener("click", function() {
         window.location.href = "index.html";
       });
-        document.getElementById("example").addEventListener("click", function() {
-          window.location.href = "view.html";
-        });
-        document.getElementById("noStyle").addEventListener("click", function() {
-          window.location.href = "view.html";
-        });
-        document.getElementById("view").addEventListener("click", function() {
-          window.location.href = "view.html";
-        });
         
         </script>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group me-2">
-                <button type="button" class="btn btn-sm btn-outline-secondary" id ="modify">Modify</button>
-              </div>
-            </div>
-          </div>
       <h2>Contents</h2>
     <div class="table-responsive">
       <table class="table table-striped table-sm">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">날자</th>
+            <th scope="col">시간</th>
             <th scope="col">장소</th>
-            <th scope="col">내용</th>
+            <th scope="col">종류</th>
+            <th scope="col">상세 내용</th>
             <th scope="col">비용</th>
+            <th scope="col">수정</th>
             <th scope="col">삭제</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>001</td>
-            <td>2023-05-11</td>
-            <td>매점</td>
-            <td>아이스크림</td>
-            <td>1500원</td>
-            <td><input type ="button" value ="삭제"onclick=con()></td>
-          </tr>
-          <tr>
-            <td>002</td>
-            <td>2023-05-15</td>
-            <td>에인트</td>
-            <td>커피, 빵</td>
-            <td>4500원</td>
-            <td><input type ="button" value ="삭제"onclick=con()></td>
-          </tr>
-          <tr>
-            <td>003</td>
-            <td>2023-09-11</td>
-            <td>맘스</td>
-            <td>점심</td>
-            <td>4500원</td>
-            <td><input type ="button" value ="삭제"onclick=con()></td>
-          </tr>
-          <tr>
-            <td>004</td>
-            <td>2023-09-15</td>
-            <td>GS25</td>
-            <td>야식</td>
-            <td>4400원</td>
-            <td><input type ="button" value ="삭제"onclick=con()></td>
-          </tr>
-          <tr>
-            <td>005</td>
-            <td>2023-09-22</td>
-            <td>알파</td>
-            <td>학용품</td>
-            <td>5000원</td>
-            <td><input type ="button" value ="삭제"onclick=con()></td>
-          </tr>
-          <tr>
-            <td>006</td>
-            <td>2023-10-01</td>
-            <td>학교</td>
-            <td>바람막이 구매</td>
-            <td>68000원</td>
+            <td>항목의 날자</td>
+            <td>항목의 시간</td>
+            <td>항목의 장소</td>
+            <td>항목의 종류</td>
+            <td>항목의 상세 내용</td>
+            <td>항목의 비용</td>
+            <td><input type ="button" value ="수정" id = "modify"></td>
             <td><input type ="button" value ="삭제"onclick=con()></td>
           </tr>
         </tbody>
