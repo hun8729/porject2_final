@@ -53,8 +53,8 @@
         function check(){
             
             var dateLength = document.getElementById("date").value.length;
-            if(dateLength < 10){
-                alert("2023-10-09 형식으로 입력해주세요")
+            if(dateLength < 8){
+                alert("YYYYMMDD 형식으로 입력해주세요")
                 document.getElementById("date").focus();
                 return false;
             }
@@ -72,7 +72,7 @@
             }
             var content = document.form1.contents.value;
             if(content ==""){
-                alert("내용을 입력해주세요!")
+                alert("구체적인 내용을 입력해주세요!")
                 document.getElementById("contents").focus();
                 return false;
             }

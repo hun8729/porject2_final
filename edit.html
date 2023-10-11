@@ -42,11 +42,17 @@
     <link href="/dashboard.css" rel="stylesheet">
 
     <script>
-        function check(){
+      function check(){
             var dateLength = document.getElementById("date").value.length;
-            if(dateLength < 10){
-                alert("2023-10-09 형식으로 입력해주세요")
+            if(dateLength < 8){
+                alert("YYYYMMDD 형식으로 입력해주세요")
                 document.getElementById("date").focus();
+                return false;
+            }
+            var time = document.getElementById("time").value;
+            if(time==""){
+                alert("시간을 입력해주세요!")
+                document.getElementById("time").focus();
                 return false;
             }
             var location = document.form1.place.value;
@@ -57,7 +63,7 @@
             }
             var content = document.form1.contents.value;
             if(content ==""){
-                alert("내용을 입력해주세요!")
+                alert("구체적인 내용을 입력해주세요!")
                 document.getElementById("contents").focus();
                 return false;
             }
@@ -73,7 +79,7 @@
                 alert("수정 성공!");
             }
         }
-    </script>
+      </script>
   </head>
 
   <body>
@@ -118,21 +124,30 @@
     </div>
     <h2> 수정할 내용을 입력해주세요</h2>
     <form name = "form1" onsubmit="return check()" method = "post">
-        <label for ="date">날자</label>
-        <input type = "text" name = "date" id="date"><br> 
-        <label for ="place">장소</label>
-        <input type = "text" name = "place" id ="place"><br>
-        <label for ="contents">내용</label>
-        <input type = "text" name = "contents" id ="contents"><br>
-        <label for ="price">비용</label>
-        <input type = "text" name = "price" id ="price"><br>
-        <input type ="submit" value = "수정">
-        </form>
-        <button onclick = cancel();>취소</button>
+      <label for ="date">날자</label>
+      <input type = "text" name = "date" id="date"><br> 
+      <label for ="date">시간</label>
+      <input type = "text" name = "time" id="time"><br> 
+      <label for ="place">장소</label>
+      <input type = "text" name = "place" id ="place"><br>
+      <label for ="type">유형</label>
+      <select name = 'type'>
+          <option value="1">의류</option>
+          <option value="2">식사</option>
+          <option value="3">학업</option>
+          <option value="4">취미생활</option>
+      </select><br>
+      <label for ="contents">구체적인 내용</label>
+      <input type = "text" name = "contents" id ="contents"><br>
+      <label for ="price">비용</label>
+      <input type = "text" name = "price" id ="price"><br>
+      <input type ="submit" value = "추가" >
+  </form>
+  <button onclick = cancel();>취소</button>
     <script>
         function cancel() {
         if (confirm("작성을 취소하고 이동하시겠습니까?")) {
-            window.location.href = "index.html";
+           window.location.href = "index.html";
             return false;
         }
     }
